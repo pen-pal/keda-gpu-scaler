@@ -17,17 +17,9 @@ A [KEDA External Scaler](https://keda.sh/docs/latest/concepts/external-scalers/)
 
 ### What it does in 30 seconds
 
-```
-GPU Node                          KEDA Operator
-┌─────────────────────┐           ┌──────────────────┐
-│ keda-gpu-scaler     │──gRPC───> │ External Scaler  │
-│ (DaemonSet)         │           │ trigger          │
-│                     │           └────────┬─────────┘
-│ NVML: 92% GPU util  │                    │
-│ NVML: 14.2GB VRAM   │           Scale vllm-deployment
-│ :9090/metrics (opt) │           from 3 → 8 replicas
-└─────────────────────┘
-```
+<p align="center">
+  <img src="docs/images/overview.png" alt="keda-gpu-scaler overview" width="100%"/>
+</p>
 
 ---
 
