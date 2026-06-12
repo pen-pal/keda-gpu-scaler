@@ -26,13 +26,12 @@ type State struct {
 	ready atomic.Bool
 }
 
-// MarkReady records that the scaler has completed its first successful metrics
-// collection and can serve traffic.
+// MarkReady sets the readiness state to true.
 func (s *State) MarkReady() {
 	s.ready.Store(true)
 }
 
-// Ready reports whether the scaler is ready to serve traffic.
+// Ready returns the readiness state.
 func (s *State) Ready() bool {
 	return s.ready.Load()
 }

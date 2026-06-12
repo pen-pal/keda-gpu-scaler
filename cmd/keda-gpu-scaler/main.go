@@ -85,7 +85,7 @@ func main() {
 		}
 	}()
 
-	// Wrap collector with prometheus instrumentation if metrics are enabled
+	// Wrap with prometheus instrumentation if enabled
 	var metricsCollector gpu.MetricsCollector = collector
 	if *metricsPort > 0 {
 		metrics.Register(prometheus.DefaultRegisterer)

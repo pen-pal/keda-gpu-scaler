@@ -106,8 +106,7 @@ var builtinProfiles = map[string]Profile{
 	},
 }
 
-// Get returns a profile by name. Returns the profile and true if found,
-// or a zero Profile and false if not.
+// Get returns a profile by name.
 func Get(name string) (Profile, bool) {
 	p, ok := builtinProfiles[name]
 	return p, ok

@@ -18,13 +18,12 @@ package gpu
 
 import "fmt"
 
-// MockCollector implements MetricsCollector with configurable GPU metrics.
-// Used for unit tests, integration tests, and e2e tests without GPU hardware.
+// MockCollector is a test double for MetricsCollector.
 type MockCollector struct {
 	Devices []Metrics
 }
 
-// NewMockCollector creates a mock collector with the given device metrics.
+// NewMockCollector returns a mock backed by the given devices.
 func NewMockCollector(devices []Metrics) *MockCollector {
 	return &MockCollector{Devices: devices}
 }
